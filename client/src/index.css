@@ -76,3 +76,17 @@ body {
   text-decoration: none;
   color:black;
 }
+.saved-movie-active{
+  background: rgba(0, 252, 168, 0.12)
+}
+
+
+
+.home-button:hover{
+  background: rgba(163, 20, 20, 0.12);
+  color: red;
+}
+.saved-movie:hover{
+  background: rgba(143, 47, 47, 0.12);
+  color: red;
+}
