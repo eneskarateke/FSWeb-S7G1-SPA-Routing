@@ -29,18 +29,21 @@ export default function App () {
 
   const KaydedilenlerListesineEkle = id => {
     // Burası esnek. Aynı filmin birden fazla kez "saved" e eklenmesini engelleyin
+    if (!saved.includes(id)) {
+      setSaved([...saved, id]);
+    }
   };
 
   return (
     <Router>
       <div>
-        <KaydedilenlerListesi list={saved}/>
+        <KaydedilenlerListesi movieList={movieList} list={saved}/>
         <Switch>
           <Route exact path="/">
             <FilmListesi movies={movieList}/>
           </Route>
           <Route path="/Filmler/:id">
-            <Film movies={movieList}/>
+            <Film KaydedilenlerListesineEkle={KaydedilenlerListesineEkle} movies={movieList}/>
           </Route>
         </Switch>
       </div>

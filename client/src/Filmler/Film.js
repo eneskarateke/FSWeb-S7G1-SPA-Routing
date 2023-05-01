@@ -27,7 +27,7 @@ export default function Film(props) {
   }, [id]);
 
   // Yalnızca esnek görevlere geçtiğinizde burdaki yorum etiketini kaldırın
-  // const filmiKaydet = evt => { }
+  const filmiKaydet = evt => { }
 
   if (!movie) {
     return <div>Film bilgisi yükleniyor...</div>;
@@ -53,7 +53,10 @@ export default function Film(props) {
           </div>
         ))}
       </div>
-      <div className="save-button">Kaydet</div>
+      <button className="save-button"
+       onClick={() => props.KaydedilenlerListesineEkle(movie.id)}>
+  Kaydet
+</button>
     </div>
   );
 }
