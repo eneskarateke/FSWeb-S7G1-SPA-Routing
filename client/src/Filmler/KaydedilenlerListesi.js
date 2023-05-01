@@ -9,9 +9,11 @@ export default function KaydedilenlerListesi(props) {
       {list.map(id => {
         const movie = movieList.find(movie => movie.id === id);
         return (
-          <span key={id} className="saved-movie">
-            {movie ? movie.title : ""}
-          </span>
+          <Link key={id} to={`/filmler/${id}`}>
+            <span className="saved-movie">
+              {movie ? movie.title : ""}
+            </span>
+          </Link>
         );
       })}
       <Link to="/">
